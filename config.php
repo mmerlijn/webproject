@@ -7,10 +7,10 @@ return [
 
     'database' => [
         'user' => 'root',
-        'password' => 'usbw',
+        'password' => 'secret',
         'port' => 3306,
         'host' => 'localhost',
-        'dbname' => 'databasenaam',
+        'dbname' => 'website',
         'charset' => 'utf8mb4',
     ]
 ];

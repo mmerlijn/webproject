@@ -16,3 +16,26 @@ function isUri($pad)
     }
     return false;
 }
+
+//Deze functie haalt configuratie parameters op. Gebruik een . om nested items op te halen
+//bijvoorbeeld config('database.user')
+function config($param)
+{
+    global $config;
+    $path_items = explode(".", $param);
+    $result = $config;
+    foreach ($path_items as $item) {
+        if (isset($result[$item]))
+            $result = $result[$item];
+        else {
+            dd("config param " . $param . " bestaat niet");
+        }
+    }
+    return $result;
+}
+
+function redirect($url, $statusCode = 303)
+{
+    header('Location: ' . $url, true, $statusCode);
+    die();
+}

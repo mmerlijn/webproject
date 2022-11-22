@@ -18,5 +18,8 @@
         <div>
             <a href="/contact" class="hover:text-indigo-700 <?= isUri("/contact") ? 'bg-purple-200 rounded p-2' : '' ?>">Contact</a>
         </div>
+        <div>
+            <a href="/berichten" class="hover:text-indigo-700 <?= isUri("/berichten") ? 'bg-purple-200 rounded p-2' : '' ?>">Berichten</a>
+        </div>
     </div>
 </nav>

@@ -19,7 +19,22 @@ switch ($uri) {
     case "/contact":
         require "controllers/contact.php";
         break;
-
+    //berichten
+    case "/berichten":
+        require "controllers/bericht.index.php";
+        break;
+    case "/lees-bericht":
+        require "controllers/bericht.read.php";
+        break;
+    case "/schrijf-bericht":
+        require "controllers/bericht.create.php";
+        break;
+    case "/wijzig-bericht":
+        require "controllers/bericht.update.php";
+        break;
+    case "/verwijder-bericht":
+        require "controllers/bericht.delete.php";
+        break;
     default: //niet bekende uri dan ...
         http_response_code(404);
         require "view/404.view.php";
