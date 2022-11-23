@@ -3,6 +3,7 @@ return [
 
     'app' => [
         'name' => 'Web verbeteraar',
+        'telefoonnr' => '06 11 22 33 44',
     ],
 
     'database' => [

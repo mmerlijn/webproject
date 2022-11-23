@@ -1,7 +1,7 @@
 <?php
 
 //handig om te debuggen welke inhoud er in een bepaalde variabele zit
-function dd($variable = null)
+function dd($variable = null): void
 {
     echo "<pre>";
     var_dump($variable);
@@ -9,7 +9,7 @@ function dd($variable = null)
     die();
 }
 
-function isUri($pad)
+function isUri($pad): bool
 {
     if (parse_url($_SERVER['REQUEST_URI'])['path'] === $pad) {
         return true;
@@ -19,7 +19,7 @@ function isUri($pad)
 
 //Deze functie haalt configuratie parameters op. Gebruik een . om nested items op te halen
 //bijvoorbeeld config('database.user')
-function config($param)
+function config($param): string
 {
     global $config;
     $path_items = explode(".", $param);
@@ -38,4 +38,30 @@ function redirect($url, $statusCode = 303)
 {
     header('Location: ' . $url, true, $statusCode);
     die();
+}
+
+function hasRole($role): bool
+{
+    if (isset($_SESSION['user']) and $_SESSION['user']['role'] == $role) {
+        return true;
+    }
+    return false;
+}
+
+function isLogin(): bool
+{
+    if ($_SESSION['user']['id'] ?? false) {
+        return true;
+    }
+    return false;
+}
+
+function username(): string
+{
+    if (isLogin()) {
+        return $_SESSION['user']['voornaam'] . " " .
+            $_SESSION['user']['tussenvoegsel'] . " " .
+            $_SESSION['user']['achternaam'];
+    }
+    return '';
 }

@@ -5,6 +5,5 @@ $title = "Contact pagina";
 $contactgegevens = [
     'plaats' => 'Purmerend',
     'adres' => 'Straatnaam 23',
-    'telefoonnr' => '06 11 22 33 44',
 ];
 require "view/contact.view.php";

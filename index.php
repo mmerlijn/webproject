@@ -9,10 +9,6 @@ $config = require "config.php";
 require "functions.php";
 
 require "Database.php";
-require "models/Model.php";
-require "models/User.php";
-$user = new User();
-//dd($user->first());
-// Hier gaat de doorverwijzing naar andere pagina's
+
 require "router.php";
 

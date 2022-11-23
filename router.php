@@ -35,6 +35,9 @@ switch ($uri) {
     case "/verwijder-bericht":
         require "controllers/bericht.delete.php";
         break;
+    case "/login":
+        require "controllers/login.php";
+        break;
     default: //niet bekende uri dan ...
         http_response_code(404);
         require "view/404.view.php";
